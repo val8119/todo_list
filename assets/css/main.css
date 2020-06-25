@@ -1,0 +1,21 @@
+.task-text {
+    display: inline-block;
+}
+
+.task-del {
+    border: none;
+    background: transparent;
+}
+
+.task-add {
+    border: none;
+    background: transparent;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
