@@ -8,16 +8,19 @@ const tasksList = document.querySelector(".tasks-list");
 var tasks = [];
 
 // functions
-function saveTasks() {
+function deleteTask() {
+    console.log("HELLO")
+}
 
-    localStorage.setItem("tasks", tasks)
+function saveTasks() {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
 function getTasks() {
-    var tasksInStorage = localStorage.getItem("tasks")
+    var storedTasks = JSON.parse(localStorage.getItem("tasks"));
 
-    for (var i in tasksInStorage) {
-        tasks.push(tasksInStorage[i])
+    for (var i in storedTasks) {
+        tasks.push(storedTasks[i])
     }
 }
 
@@ -69,3 +72,5 @@ window.onload = getTasks();
 window.onload = createTasks();
 
 addButton.addEventListener("click", addTask);
+
+delButton.addEventListener("click", deleteTask);
