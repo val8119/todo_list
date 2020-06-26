@@ -4,9 +4,9 @@ const addButton = document.querySelector(".task-add");
 const tasksList = document.querySelector(".tasks-list");
 
 // listeners
-addButton.addEventListener("click", addTask)
+addButton.addEventListener("click", addTask);
 
-tasksList.addEventListener("click", delTask);
+tasksList.addEventListener("click", checkDelCompl);
 
 // functions
 function addTask(event) {
@@ -27,7 +27,7 @@ function addTask(event) {
     // create completed button
     const taskCompletedButton = document.createElement("button");
     taskCompletedButton.innerHTML = '<i class="fas fa-check"></i>';
-    taskCompletedButton.classList.add("task-compl")
+    taskCompletedButton.classList.add("task-compl");
 
     // add button to div
     taskItemDiv.appendChild(taskCompletedButton);
@@ -35,7 +35,7 @@ function addTask(event) {
     // create delete button
     const taskDeleteButton = document.createElement("button");
     taskDeleteButton.innerHTML = '<i class="fas fa-trash"></i>';
-    taskDeleteButton.classList.add("task-del")
+    taskDeleteButton.classList.add("task-del");
 
     // add button to div
     taskItemDiv.appendChild(taskDeleteButton);
@@ -47,12 +47,22 @@ function addTask(event) {
     addInput.value = "";
 }
 
-function delTask(event) {
+function checkDelCompl(event) {
     const target = event.target;
 
     // check if clicked on delete button
     if (target.classList[0] === "task-del") {
-        target.parentElement.remove();
+        target.parentElement.classList.toggle("deleted");
+
+        // check if animation has ended
+        target.parentElement.addEventListener("transitionend", function () {
+            target.parentElement.remove();
+        });
+    }
+
+    // check if clicked on completed button
+    if (target.classList[0] === "task-compl") {
+        target.parentElement.classList.toggle("completed");
     }
 }
 

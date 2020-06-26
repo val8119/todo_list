@@ -30,6 +30,16 @@ input {
     padding: 2px 0 2px 5px;
 }
 
+.deleted {
+    opacity: 0;
+}
+
+.completed {
+    text-decoration: line-through;
+    text-decoration-color: #ffffffea;
+    opacity: 0.5;
+}
+
 .container {
     width: 50vw;
     height: 50vh;
@@ -47,6 +57,8 @@ input {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    color: #ffffffea;
+    transition: all 0.3s ease;
 }
 
 .task li {
