@@ -1,8 +1,58 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: linear-gradient(120deg, rgb(43, 73, 114), rgb(30, 54, 87));
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+header {
+    color: #ffffffea;
+    font-size: 3em;
+    margin: 0 0 25px 0;
+}
+
+form,
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    border-style: none;
+    border-radius: 3px;
+    background-color: #ffffffea;
+    padding: 2px 0 2px 5px;
+}
+
+.container {
+    width: 50vw;
+    height: 50vh;
+    margin: auto;
+    margin-top: 10vh;
+    text-align: center;
+}
+
 .task-text {
     display: inline-block;
+    color: #ffffffea;
 }
 
 .task-del {
+    color: #bd1b1b;
+    margin: 0 0 0 10px;
+    border: none;
+    background: transparent;
+}
+
+.task-compl {
+    color: #1bbd23;
+    margin: 0 0 0 10px;
     border: none;
     background: transparent;
 }
@@ -10,6 +60,9 @@
 .task-add {
     border: none;
     background: transparent;
+    color: rgb(34, 60, 97);
+    margin-left: -23px;
+    font-size: 24px;
 }
 
 button:focus {
@@ -18,4 +71,8 @@ button:focus {
 
 button:hover {
     cursor: pointer;
+}
+
+input:focus {
+    outline: none;
 }

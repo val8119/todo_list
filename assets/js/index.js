@@ -1,3 +1,51 @@
+// selectors
+const addInput = document.querySelector(".task-input");
+const addButton = document.querySelector(".task-add");
+const tasksList = document.querySelector(".tasks-list");
+
+// listeners
+addButton.addEventListener("click", addTask)
+
+// functions
+function addTask(event) {
+    event.preventDefault(); // stop refresh
+
+    // create task item div
+    const taskItemDiv = document.createElement("div");
+    taskItemDiv.classList.add("task");
+
+    // create task item li
+    const taskItemLi = document.createElement("li");
+    taskItemLi.innerText = addInput.value;
+    taskItemLi.classList.add("task-text");
+
+    // add list item to div
+    taskItemDiv.appendChild(taskItemLi);
+
+    // create completed button
+    const taskCompletedButton = document.createElement("button");
+    taskCompletedButton.innerHTML = '<i class="fas fa-check-square"></i>';
+    taskCompletedButton.classList.add("task-compl")
+
+    // add button to div
+    taskItemDiv.appendChild(taskCompletedButton);
+
+    // create delete button
+    const taskDeleteButton = document.createElement("button");
+    taskDeleteButton.innerHTML = '<i class="fas fa-trash"></i>';
+    taskDeleteButton.classList.add("task-del")
+
+    // add button to div
+    taskItemDiv.appendChild(taskDeleteButton);
+
+    // insert div into document
+    tasksList.appendChild(taskItemDiv);
+}
+
+
+
+/* OLD CODE
+
 // variables
 const addButton = document.querySelector(".task-add");
 const addInput = document.querySelector(".task-input");
@@ -94,3 +142,5 @@ for (var i = 0; i < delButton.length; i++) {
         saveTasks();
     }
 }
+
+*/

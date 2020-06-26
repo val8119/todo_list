@@ -6,16 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/main.css">
     <script src="https://kit.fontawesome.com/a699fa5281.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
     <title>Todo List</title>
 </head>
 
 <body>
     <div class="container">
-        <input class="task-input" type="text" placeholder="Add a new task">
-        <button class="task-add"><i class="fas fa-plus-square"></i></button>
+        <header>Todo List</header>
+        <form>
+            <input class="task-input" type="text" placeholder="Add a new task">
+            <button class="task-add" type="submit"><i class="fas fa-plus-square"></i></button>
+        </form>
         <div class="tasks-cont">
-            <ul class="tasks-list">
-            </ul>
+            <ul class="tasks-list"></ul>
         </div>
     </div>
     <script src="assets/js/index.js"></script>
