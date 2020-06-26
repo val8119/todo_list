@@ -6,6 +6,8 @@ const tasksList = document.querySelector(".tasks-list");
 // listeners
 addButton.addEventListener("click", addTask)
 
+tasksList.addEventListener("click", delTask);
+
 // functions
 function addTask(event) {
     event.preventDefault(); // stop refresh
@@ -24,7 +26,7 @@ function addTask(event) {
 
     // create completed button
     const taskCompletedButton = document.createElement("button");
-    taskCompletedButton.innerHTML = '<i class="fas fa-check-square"></i>';
+    taskCompletedButton.innerHTML = '<i class="fas fa-check"></i>';
     taskCompletedButton.classList.add("task-compl")
 
     // add button to div
@@ -40,6 +42,18 @@ function addTask(event) {
 
     // insert div into document
     tasksList.appendChild(taskItemDiv);
+
+    // clear input box
+    addInput.value = "";
+}
+
+function delTask(event) {
+    const target = event.target;
+
+    // check if clicked on delete button
+    if (target.classList[0] === "task-del") {
+        target.parentElement.remove();
+    }
 }
 
 

@@ -38,23 +38,42 @@ input {
     text-align: center;
 }
 
+.task {
+    margin: 5px auto 5px auto;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+    height: 30px;
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.task li {
+    flex: 1;
+}
+
 .task-text {
+    text-align: left;
     display: inline-block;
     color: #ffffffea;
+    margin-left: 5px;
 }
 
 .task-del {
     color: #bd1b1b;
-    margin: 0 0 0 10px;
+    margin: 0 5px 0 5px;
     border: none;
     background: transparent;
+    float: right;
 }
 
 .task-compl {
     color: #1bbd23;
-    margin: 0 0 0 10px;
+    margin: 0 5px 0 5px;
     border: none;
     background: transparent;
+    float: right;
 }
 
 .task-add {
@@ -75,4 +94,9 @@ button:hover {
 
 input:focus {
     outline: none;
+}
+
+.fa-trash,
+.fa-check {
+    pointer-events: none;
 }
