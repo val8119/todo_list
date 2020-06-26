@@ -1,7 +1,6 @@
 // variables
 const addButton = document.querySelector(".task-add");
 const addInput = document.querySelector(".task-input");
-const delButton = document.querySelector(".task-del");
 const taskText = document.querySelector(".task-test");
 const tasksList = document.querySelector(".tasks-list");
 
@@ -9,7 +8,12 @@ var tasks = [];
 
 // functions
 function deleteTask() {
-    console.log("HELLO")
+    for (var i = 0; i < delButton.length; i++) {
+        delButton[i].onclick = function () {
+            var listItemDiv = this.parentElement;
+            listItemDiv.remove();
+        }
+    }
 }
 
 function saveTasks() {
@@ -73,4 +77,20 @@ window.onload = createTasks();
 
 addButton.addEventListener("click", addTask);
 
-delButton.addEventListener("click", deleteTask);
+var delButton = document.getElementsByClassName("task-del");
+for (var i = 0; i < delButton.length; i++) {
+    delButton[i].onclick = function () {
+        var listItemDiv = this.parentElement;
+        listItemDiv.style.display = "none";
+
+        console.log(tasks)
+
+        console.log(i)
+
+        tasks = tasks.splice(i, i);
+
+        console.log(tasks)
+
+        saveTasks();
+    }
+}
